@@ -66,7 +66,7 @@ export const swagger = async <Path extends string = '/swagger'>(
 
 	app.get(path, function documentation() {
 		const combinedSwaggerOptions = {
-			url: `/${relativePath}/json`,
+			url: `/api/${relativePath}/json`,
 			dom_id: '#swagger-ui',
 			...swaggerOptions
 		}
@@ -83,7 +83,7 @@ export const swagger = async <Path extends string = '/swagger'>(
 		const scalarConfiguration: ReferenceConfiguration = {
 			spec: {
 				...scalarConfig.spec,
-				url: `/${relativePath}/json`
+				url: `/api/${relativePath}/json`
 			},
 			...scalarConfig,
 			// so we can showcase the elysia theme
